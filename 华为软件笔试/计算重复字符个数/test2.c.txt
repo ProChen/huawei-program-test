@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	char input[1025];
+	char unique[1025];
+	int num[1025];
+	int out=0;
+	int n=0;
+	int f=0;
+	int i=0;
+	int j=0;
+	int k=0;
+	for(f=0; f<1025; f++)
+	{
+		input[f]='\0';
+		unique[f]='\0';
+		num[f]=0;
+	}
+	cin>>input;
+	if(input[0]=='\0')
+		return 0;
+	unique[0]=input[0];
+	num[0]++;
+	for(i=1; input[i]!='\0'; i++)
+	{
+		if((input[i]>='A' && input[i]<='Z') || (input[i]>='a' && input[i]<='z'))
+		{
+			if(input[i]==unique[n])
+				num[n]++;
+			else
+			{
+				n++;
+				unique[n]=input[i];
+				num[n]++;
+			}
+		}
+	}
+	for(k=0; k<=n; k++)
+	{
+		if((unique[k]>='A' && unique[k]<='Z') || (unique[k]>='a' && unique[k]<='z'))
+		cout<<unique[k]<<num[k];
+	}
+	return 0;
+}
